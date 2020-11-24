@@ -1,0 +1,50 @@
+version: '3'
+services:
+  odd_number:
+    environment:
+      - KIND_NUMBER=odd
+    build: ./services/api/wsgi
+
+  even_number:
+    environment:
+      - KIND_NUMBER=even
+    build: ./services/api/wsgi
+
+  odd_loadbalancer:
+    build: ./services/odd_lb
+    ports:
+      - "8081:80"
+    depends_on:
+      - odd_number
+
+  even_loadbalancer:
+    build: ./services/even_lb
+    ports:
+      - "8082:80"
+    depends_on:
+      - even_number
+
+  consumer:
+    build: ./services/consumer
+    ports:
+      - "8083:8000"
+
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    ports:
+      - "6379:6379"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  producer_number:
+    environment:
+      - API_URI_1=http://byne_odd_loadbalancer_1:80
+      - API_URI_2=http://byne_even_loadbalancer_1:80
+      - REDIS_URI=redis://byne_redis_1
+    build: ./services/producer
+    depends_on:
+      - redis
+      - odd_loadbalancer
+      - even_loadbalancer
