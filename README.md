@@ -16,9 +16,6 @@ O desafio consiste em arquitetar e desenvolver múltiplos serviços, seguindo as
 
 É importante lembrar que nossos produtos possuem foco em uso contínuo 24/7, com ciclo de vida esperado de 10 anos. Tolerância a falhas, redundância e simplicidade são essenciais.
 
-O Gustavo estará disponível para lhe apoiar ou qualquer esclarecimento nos contatos abaixo:
-
-docker-compose up --scale odd_number=2 --scale even_number=2
 
 #Desenvolvimento
 
