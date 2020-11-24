@@ -54,11 +54,11 @@ Para iniciar os serviços
 
 Testar Loadbalancer para números páres
 
-    curl -X GET http://localhost:8082/numbers/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWNyb3NlcnZpY2VfaWQiOiIxMjM0NTY3ODkwIn0.l9u4wnxv7h0o8JwMgVCZ6p_bC19bBf5xQYIg3SsKCC0
+    curl -X GET http://localhost:8082/number/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWNyb3NlcnZpY2VfaWQiOiIxMjM0NTY3ODkwIn0.l9u4wnxv7h0o8JwMgVCZ6p_bC19bBf5xQYIg3SsKCC0
         
 Testar Loadbalancer para números ímpares
 
-    curl -X GET http://localhost:8081/numbers/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWNyb3NlcnZpY2VfaWQiOiIxMjM0NTY3ODkwIn0.l9u4wnxv7h0o8JwMgVCZ6p_bC19bBf5xQYIg3SsKCC0
+    curl -X GET http://localhost:8081/number/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWNyb3NlcnZpY2VfaWQiOiIxMjM0NTY3ODkwIn0.l9u4wnxv7h0o8JwMgVCZ6p_bC19bBf5xQYIg3SsKCC0
     
 Testar consumo dos 100 ultimos números
   
