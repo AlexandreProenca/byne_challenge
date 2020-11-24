@@ -41,6 +41,10 @@ aprouch dos serviços 1 e 2, usar um load balancer com algumas instancias da API
     
     $ pytest -vv
  
+ 
+Clonando o repositório
+
+    git clone https://github.com/AlexandreProenca/byne_challenge byne
 
 
 Para iniciar os serviços 
